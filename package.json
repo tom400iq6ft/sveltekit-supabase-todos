@@ -1,0 +1,45 @@
+{
+	"name": "sveltekit-supabase-todos",
+	"type": "module",
+	"engines": {
+		"node": ">=18 <19"
+	},
+	"scripts": {
+		"dev": "vite dev",
+		"types": "supabase gen types typescript --local --schema public > types/Database/supabase.ts",
+		"lint": "prettier --check .",
+		"format": "prettier --write .",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"test": "pnpm test:unit && pnpm test:integration",
+		"test:unit": "vitest",
+		"test:integration": "playwright test",
+		"build": "vite build",
+		"preview": "vite preview",
+		"preinstall": "npx only-allow pnpm"
+	},
+	"devDependencies": {
+		"@playwright/test": "^1.28.1",
+		"@supabase/auth-helpers-sveltekit": "^0.10.7",
+		"@supabase/supabase-js": "^2.39.1",
+		"@sveltejs/adapter-vercel": "^3.0.0",
+		"@sveltejs/kit": "^2.0.0",
+		"@sveltejs/vite-plugin-svelte": "^3.0.0",
+		"@types/uuid": "^9.0.7",
+		"autoprefixer": "^10.4.16",
+		"lucide-svelte": "^0.300.0",
+		"postcss": "^8.4.32",
+		"postcss-import": "^15.1.0",
+		"prettier": "^3.1.1",
+		"prettier-plugin-svelte": "^3.1.2",
+		"prettier-plugin-tailwindcss": "^0.5.9",
+		"svelte": "^5.0.0-next.1",
+		"svelte-check": "^3.6.0",
+		"tailwindcss": "^3.4.0",
+		"tslib": "^2.4.1",
+		"typescript": "^5.0.0",
+		"uuid": "^9.0.1",
+		"vite": "^5.0.3",
+		"vitest": "^1.0.0"
+	}
+}
